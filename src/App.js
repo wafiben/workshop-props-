@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ListOfStudents from "./Components/ListOfStudents";
+import Profile from "./Components/Profile";
 
 function App() {
+  const firstName = "taher";
+  const lastName = "kammoun";
+  const student = { studentName: "tamim", age: 35, adress: "tunisia" }; 
+  const students = [
+    { userName: "amin", age: 25, adress: "tunisia" },
+    { userName: "wissem", age: 29, adress: "benzart" },
+    { userName: "amin", age: 31, adress: "manouba" },
+  ];
+const show=(x)=>{
+  alert(`hello ${x}`)
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Profile firstName={firstName} lastName={lastName} student={student} show={show} /> 
+      <ListOfStudents  students={students} show={show} />
     </div>
   );
 }
